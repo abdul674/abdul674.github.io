@@ -1,102 +1,444 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdul Rehman | Portfolio</title>
+  <meta name="description" content="Abdul Rehman is a Technical Lead and Senior Full-Stack Engineer building scalable SaaS products, cloud-native systems, and AI-powered workflows." />
+  <meta name="author" content="Abdul Rehman" />
+  <meta name="theme-color" content="#080f1f" />
+
+  <meta property="og:title" content="Abdul Rehman | Technical Lead & Senior Full-Stack Engineer" />
+  <meta property="og:description" content="Hiring-focused portfolio covering SaaS platforms, cloud infrastructure, AI workflows, system design, and engineering leadership." />
+  <meta property="og:type" content="website" />
+
+  <title>Abdul Rehman | Technical Lead & Senior Full-Stack Engineer</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#080f1f',
+            panel: '#0f1a2f',
+            line: '#23314f',
+            accent: '#38bdf8',
+            mint: '#34d399'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 20px 80px rgba(2, 8, 23, 0.35)'
+          }
+        }
+      }
+    };
+  </script>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.14), transparent 28rem),
+        radial-gradient(circle at 85% 18%, rgba(52, 211, 153, 0.10), transparent 24rem),
+        #080f1f;
     }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+
     section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
+      scroll-margin-top: 6rem;
     }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    .project {
-      background: #fff;
-      margin: 15px 0;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: #fff;
+
+    .nav-link.active {
+      color: #e0f2fe;
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.35);
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Abdul Rehman</h1>
-    <p>Ruby on Rails Developer | Technical Lead</p>
+<body class="min-h-screen text-slate-200 antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-ink">
+    Skip to content
+  </a>
+
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
+      <a href="#hero" class="group flex items-center gap-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink" aria-label="Abdul Rehman home">
+        <span class="flex h-10 w-10 items-center justify-center rounded-md border border-accent/30 bg-accent/10 text-sm font-bold text-accent">AR</span>
+        <span class="hidden text-sm font-semibold text-white sm:block">Abdul Rehman</span>
+      </a>
+
+      <div class="hidden items-center gap-1 md:flex">
+        <a href="#about" class="nav-link rounded-md border border-transparent px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">About</a>
+        <a href="#skills" class="nav-link rounded-md border border-transparent px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Skills</a>
+        <a href="#case-studies" class="nav-link rounded-md border border-transparent px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Case Studies</a>
+        <a href="#projects" class="nav-link rounded-md border border-transparent px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Projects</a>
+        <a href="#experience" class="nav-link rounded-md border border-transparent px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Experience</a>
+        <a href="#contact" class="nav-link rounded-md border border-transparent px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Contact</a>
+      </div>
+
+      <a href="./Abdul_Rehman_CV.pdf" class="hidden rounded-md bg-accent px-4 py-2 text-sm font-semibold text-ink transition hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink md:inline-flex" download>
+        Download CV
+      </a>
+
+      <button id="mobile-menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/5 text-slate-100 transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink md:hidden" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg id="menu-open-icon" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+        </svg>
+        <svg id="menu-close-icon" class="hidden h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" />
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden border-t border-white/10 bg-ink/95 px-4 pb-5 pt-2 md:hidden">
+      <div class="mx-auto grid max-w-7xl gap-1">
+        <a href="#about" class="nav-link rounded-md border border-transparent px-3 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">About</a>
+        <a href="#skills" class="nav-link rounded-md border border-transparent px-3 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Skills</a>
+        <a href="#case-studies" class="nav-link rounded-md border border-transparent px-3 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Case Studies</a>
+        <a href="#projects" class="nav-link rounded-md border border-transparent px-3 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Projects</a>
+        <a href="#experience" class="nav-link rounded-md border border-transparent px-3 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Experience</a>
+        <a href="#contact" class="nav-link rounded-md border border-transparent px-3 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white">Contact</a>
+        <a href="./Abdul_Rehman_CV.pdf" class="mt-2 rounded-md bg-accent px-4 py-3 text-center text-sm font-semibold text-ink transition hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink" download>
+          Download CV
+        </a>
+      </div>
+    </div>
   </header>
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a Ruby on Rails engineer and technical lead with over 6 years of experience designing scalable backend systems, building full-stack web apps, and delivering high-impact SaaS features. I’ve worked on projects used by global enterprises and contributed to open-source tools for managing technical standards. I focus on clean architecture, performance optimization, and mentoring developers.
-    </p>
 
-    <h2>Selected Projects</h2>
+  <main id="main">
+    <section id="hero" class="relative overflow-hidden">
+      <div class="mx-auto grid min-h-[calc(100vh-4.5rem)] max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
+        <div>
+          <p class="mb-5 inline-flex rounded-md border border-accent/30 bg-accent/10 px-3 py-1 text-sm font-medium text-sky-200">
+            Based in Lahore, Pakistan
+          </p>
+          <h1 class="max-w-4xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Abdul Rehman
+          </h1>
+          <p class="mt-5 text-xl font-semibold text-slate-100 sm:text-2xl">
+            Technical Lead &amp; Senior Full-Stack Engineer
+          </p>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            Building scalable SaaS products, cloud-native systems, and AI-powered workflows.
+          </p>
 
-    <div class="project">
-      <h3>Enterprise Risk Intelligence Platform</h3>
-      <p>Worked on a large-scale risk data platform involving secure APIs, performance tuning, and backend refactors. Currently supporting post-acquisition work.</p>
-    </div>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#case-studies" class="inline-flex items-center justify-center rounded-md bg-accent px-5 py-3 text-sm font-semibold text-ink transition hover:bg-sky-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink">
+              View Case Studies
+            </a>
+            <a href="#contact" class="inline-flex items-center justify-center rounded-md border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink">
+              Contact Me
+            </a>
+            <a href="./Abdul_Rehman_CV.pdf" class="inline-flex items-center justify-center rounded-md border border-mint/35 bg-mint/10 px-5 py-3 text-sm font-semibold text-emerald-100 transition hover:bg-mint/20 focus:outline-none focus:ring-2 focus:ring-mint focus:ring-offset-2 focus:ring-offset-ink" download>
+              Download CV
+            </a>
+          </div>
+        </div>
 
-    <div class="project">
-      <h3>B2B Workflow Automation Tool</h3>
-      <p>Developed and maintained workflow automation features using Rails and PostgreSQL. Built user roles, reporting modules, and helped improve deployment pipelines.</p>
-    </div>
+        <aside class="rounded-lg border border-white/10 bg-white/[0.04] p-5 shadow-soft backdrop-blur">
+          <dl class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-md border border-white/10 bg-ink/50 p-4">
+              <dt class="text-sm text-slate-400">Experience</dt>
+              <dd class="mt-2 text-2xl font-bold text-white">8+ years</dd>
+            </div>
+            <div class="rounded-md border border-white/10 bg-ink/50 p-4">
+              <dt class="text-sm text-slate-400">Focus</dt>
+              <dd class="mt-2 text-lg font-semibold text-white">SaaS Engineering</dd>
+            </div>
+            <div class="rounded-md border border-white/10 bg-ink/50 p-4">
+              <dt class="text-sm text-slate-400">Cloud</dt>
+              <dd class="mt-2 text-lg font-semibold text-white">AWS &amp; IaC</dd>
+            </div>
+            <div class="rounded-md border border-white/10 bg-ink/50 p-4">
+              <dt class="text-sm text-slate-400">Leadership</dt>
+              <dd class="mt-2 text-lg font-semibold text-white">Mentoring &amp; Ownership</dd>
+            </div>
+          </dl>
+          <div class="mt-5 rounded-md border border-accent/20 bg-accent/10 p-4">
+            <p class="text-sm leading-6 text-sky-100">
+              I work across architecture, product delivery, infrastructure, incident response, and engineering practices for customer-facing software.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <div class="project">
-      <h3>Interactive Content Platform</h3>
-      <p>Built backend architecture for a quiz/survey platform with millions of interactions. Implemented data pipelines, analytics, and background processing.</p>
-    </div>
+    <section id="about" class="border-y border-white/10 bg-white/[0.03]">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[0.35fr_0.65fr] lg:items-start">
+          <div>
+            <p class="text-sm font-semibold uppercase text-accent">About</p>
+            <h2 class="mt-3 text-3xl font-bold text-white">Full-stack product engineering with production ownership.</h2>
+          </div>
+          <p class="text-lg leading-8 text-slate-300">
+            Technical Lead with 8+ years of experience designing, building, and operating scalable SaaS platforms, cloud-native applications, and customer-facing products. Experienced across backend, frontend, cloud infrastructure, production troubleshooting, and AI-powered product features.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <div class="project">
-      <h3>Fitness & Cycling Performance App</h3>
-      <p>Contributed to training logic, subscriptions, and dashboards in a Rails-based app. Integrated Stripe and improved data integrity across user plans.</p>
-    </div>
+    <section id="skills">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase text-accent">Skills</p>
+          <h2 class="mt-3 text-3xl font-bold text-white">Tools and practices I use to ship reliable systems.</h2>
+        </div>
 
-    <div class="project">
-      <h3>EdTech Music Scheduling System</h3>
-      <p>Engineered backend logic for syncing lesson schedules, calendar APIs, and user matching.</p>
-    </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <article class="rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/35">
+            <h3 class="text-lg font-semibold text-white">Backend</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Ruby on Rails</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">REST APIs</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">PostgreSQL</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">MySQL</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">MongoDB</span>
+            </div>
+          </article>
 
-    <div class="project">
-      <h3>Open Standards Tooling</h3>
-      <p>Led or contributed to LutaML, Glossarist, Relaton, Metanorma, and other Ruby-based tooling for managing international standards. Built parsers, DSLs, and documentation systems.</p>
-    </div>
+          <article class="rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/35">
+            <h3 class="text-lg font-semibold text-white">Frontend</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">React</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Next.js</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">TypeScript</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">JavaScript</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Ember.js</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Tailwind CSS</span>
+            </div>
+          </article>
 
-    <h2>Skills & Technologies</h2>
-    <p>
-      Ruby, Ruby on Rails, PostgreSQL, JavaScript, Ember.js, Redis, Sidekiq, Stripe API, AWS (EC2, Lambda, S3), Git, GitHub Copilot, TDD, REST APIs, CI/CD, XML tooling, Google Calendar API
-    </p>
+          <article class="rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/35">
+            <h3 class="text-lg font-semibold text-white">Cloud &amp; DevOps</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">AWS</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Terraform</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Docker</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">CI/CD</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Kubernetes basics</span>
+            </div>
+          </article>
 
-    <h2>Contact</h2>
-    <p>
-      Email: <a href="mailto:arehman674@gmail.com">arehman674@gmail.com</a><br />
-      LinkedIn: <a href="https://www.linkedin.com/in/abdul-rehman-majeed-7a2910140/" target="_blank">abdul-rehman-majeed-7a2910140</a>
-    </p>
-  </section>
-  <div class="footer">
-    &copy; 2024 Abdul Rehman. All rights reserved.
-  </div>
+          <article class="rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/35">
+            <h3 class="text-lg font-semibold text-white">AI &amp; Productivity</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">AI Integrations</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">LLM-assisted workflows</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">GitHub Copilot</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">ChatGPT</span>
+            </div>
+          </article>
+
+          <article class="rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/35 md:col-span-2 xl:col-span-2">
+            <h3 class="text-lg font-semibold text-white">Leadership</h3>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Technical Leadership</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Code Reviews</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Mentoring</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">System Design</span>
+              <span class="rounded-md border border-white/10 bg-white/5 px-3 py-1 text-sm text-slate-200">Production Ownership</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-studies" class="border-y border-white/10 bg-white/[0.03]">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase text-accent">Case Studies</p>
+          <h2 class="mt-3 text-3xl font-bold text-white">Selected outcomes from product and platform work.</h2>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-3">
+          <article class="flex h-full flex-col rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/35">
+            <h3 class="text-xl font-bold text-white">Reduced AWS Costs by 82%</h3>
+            <div class="mt-5 space-y-4 text-sm leading-6 text-slate-300">
+              <p><span class="font-semibold text-slate-100">Problem:</span> A production SaaS platform had AWS costs that had grown beyond actual usage needs.</p>
+              <p><span class="font-semibold text-slate-100">My Role:</span> Audited infrastructure, analyzed usage patterns, right-sized resources, removed unnecessary capacity, and improved cloud efficiency.</p>
+              <p><span class="font-semibold text-slate-100">Result:</span> Reduced monthly AWS spend from approximately $1,700 to around $300 while maintaining reliability and performance.</p>
+            </div>
+            <p class="mt-6 text-xs font-semibold uppercase text-slate-400">Stack</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">AWS</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">CloudWatch</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">RDS</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">EC2</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">S3</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">Infrastructure Optimization</span>
+            </div>
+          </article>
+
+          <article class="flex h-full flex-col rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/35">
+            <h3 class="text-xl font-bold text-white">Enterprise Survey &amp; Quiz Platform</h3>
+            <div class="mt-5 space-y-4 text-sm leading-6 text-slate-300">
+              <p><span class="font-semibold text-slate-100">Problem:</span> Enterprise customers needed a scalable platform for surveys, quizzes, lead generation, and engagement workflows.</p>
+              <p><span class="font-semibold text-slate-100">My Role:</span> Led architecture, backend development, feature delivery, production support, and engineering quality improvements.</p>
+              <p><span class="font-semibold text-slate-100">Result:</span> Delivered a SaaS platform used by enterprise customers including NASA, Google, Netflix, and Fortune 500 organizations.</p>
+            </div>
+            <p class="mt-6 text-xs font-semibold uppercase text-slate-400">Stack</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">Ruby on Rails</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">PostgreSQL</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">React</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">AWS</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">REST APIs</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">SaaS</span>
+            </div>
+          </article>
+
+          <article class="flex h-full flex-col rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-accent/35">
+            <h3 class="text-xl font-bold text-white">AI-Assisted Engineering Workflows</h3>
+            <div class="mt-5 space-y-4 text-sm leading-6 text-slate-300">
+              <p><span class="font-semibold text-slate-100">Problem:</span> Engineering teams needed faster ways to ship features, refactor safely, and navigate unfamiliar codebases.</p>
+              <p><span class="font-semibold text-slate-100">My Role:</span> Integrated AI-assisted development workflows and used AI tools for feature delivery, refactoring, test support, and productivity improvements.</p>
+              <p><span class="font-semibold text-slate-100">Result:</span> Improved delivery speed and reduced repetitive engineering effort while maintaining code quality.</p>
+            </div>
+            <p class="mt-6 text-xs font-semibold uppercase text-slate-400">Stack</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">LLMs</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">AI Integrations</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">GitHub Copilot</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">ChatGPT</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">Rails</span>
+              <span class="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-sky-100">TypeScript</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase text-accent">Projects</p>
+          <h2 class="mt-3 text-3xl font-bold text-white">Current product and automation work.</h2>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-mint/35">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="text-2xl font-bold text-white">Cuebase</h3>
+              <a href="https://cuebase.co/" target="_blank" rel="noopener noreferrer" class="rounded-md border border-white/10 px-3 py-2 text-sm font-semibold text-sky-100 transition hover:border-accent/40 hover:bg-accent/10 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink" aria-label="Visit Cuebase website">
+                Visit
+              </a>
+            </div>
+            <p class="mt-4 leading-7 text-slate-300">
+              AI solutions and automation project focused on helping businesses explore AI-powered workflows.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="rounded-md bg-mint/10 px-2.5 py-1 text-xs font-medium text-emerald-100">AI</span>
+              <span class="rounded-md bg-mint/10 px-2.5 py-1 text-xs font-medium text-emerald-100">Automation</span>
+              <span class="rounded-md bg-mint/10 px-2.5 py-1 text-xs font-medium text-emerald-100">Business Workflows</span>
+            </div>
+          </article>
+
+          <article class="rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft transition hover:-translate-y-1 hover:border-mint/35">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="text-2xl font-bold text-white">ComplyZen</h3>
+              <a href="https://complyzen.co/" target="_blank" rel="noopener noreferrer" class="rounded-md border border-white/10 px-3 py-2 text-sm font-semibold text-sky-100 transition hover:border-accent/40 hover:bg-accent/10 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink" aria-label="Visit ComplyZen website">
+                Visit
+              </a>
+            </div>
+            <p class="mt-4 leading-7 text-slate-300">
+              SaaS project exploring compliance-focused workflows, document handling, and operational process improvement.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="rounded-md bg-mint/10 px-2.5 py-1 text-xs font-medium text-emerald-100">SaaS</span>
+              <span class="rounded-md bg-mint/10 px-2.5 py-1 text-xs font-medium text-emerald-100">Compliance</span>
+              <span class="rounded-md bg-mint/10 px-2.5 py-1 text-xs font-medium text-emerald-100">Workflow Automation</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="border-y border-white/10 bg-white/[0.03]">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[0.35fr_0.65fr]">
+          <div>
+            <p class="text-sm font-semibold uppercase text-accent">Experience</p>
+            <h2 class="mt-3 text-3xl font-bold text-white">Recent roles and ownership.</h2>
+          </div>
+
+          <ol class="relative space-y-5 border-l border-white/10 pl-6">
+            <li class="rounded-lg border border-white/10 bg-panel/80 p-5 shadow-soft">
+              <div class="absolute -left-1.5 mt-2 h-3 w-3 rounded-full bg-accent ring-4 ring-ink"></div>
+              <p class="text-lg font-bold text-white">Technical Lead</p>
+              <p class="mt-1 text-sm font-medium text-slate-300">Techieminions</p>
+              <time datetime="2022-02" class="mt-2 block text-sm text-slate-400">Feb 2022 - Present</time>
+            </li>
+
+            <li class="rounded-lg border border-white/10 bg-panel/80 p-5 shadow-soft">
+              <div class="absolute -left-1.5 mt-2 h-3 w-3 rounded-full bg-slate-500 ring-4 ring-ink"></div>
+              <p class="text-lg font-bold text-white">Senior Software Engineer</p>
+              <p class="mt-1 text-sm font-medium text-slate-300">Techieminions</p>
+              <time datetime="2021-02" class="mt-2 block text-sm text-slate-400">Feb 2021 - Feb 2022</time>
+            </li>
+
+            <li class="rounded-lg border border-white/10 bg-panel/80 p-5 shadow-soft">
+              <div class="absolute -left-1.5 mt-2 h-3 w-3 rounded-full bg-slate-500 ring-4 ring-ink"></div>
+              <p class="text-lg font-bold text-white">Software Engineer</p>
+              <p class="mt-1 text-sm font-medium text-slate-300">7vals</p>
+              <time datetime="2018-08" class="mt-2 block text-sm text-slate-400">Aug 2018 - Feb 2021</time>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="rounded-lg border border-white/10 bg-panel/80 p-6 shadow-soft sm:p-8 lg:p-10">
+          <div class="grid gap-8 lg:grid-cols-[0.55fr_0.45fr] lg:items-center">
+            <div>
+              <p class="text-sm font-semibold uppercase text-accent">Contact</p>
+              <h2 class="mt-3 text-3xl font-bold text-white">Let's talk about product engineering, platforms, and AI workflows.</h2>
+              <p class="mt-5 max-w-2xl leading-7 text-slate-300">
+                Available for conversations around technical leadership, full-stack SaaS delivery, cloud infrastructure, and practical AI integration.
+              </p>
+            </div>
+
+            <address class="not-italic">
+              <dl class="grid gap-3">
+                <div class="rounded-md border border-white/10 bg-ink/45 p-4">
+                  <dt class="text-sm text-slate-400">Email</dt>
+                  <dd class="mt-1">
+                    <a href="mailto:arehman674@gmail.com" class="font-semibold text-sky-100 transition hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink">arehman674@gmail.com</a>
+                  </dd>
+                </div>
+                <div class="rounded-md border border-white/10 bg-ink/45 p-4">
+                  <dt class="text-sm text-slate-400">LinkedIn</dt>
+                  <dd class="mt-1">
+                    <a href="#" class="font-semibold text-sky-100 transition hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink">LinkedIn profile</a>
+                  </dd>
+                </div>
+                <div class="rounded-md border border-white/10 bg-ink/45 p-4">
+                  <dt class="text-sm text-slate-400">GitHub</dt>
+                  <dd class="mt-1">
+                    <a href="#" class="font-semibold text-sky-100 transition hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink">GitHub profile</a>
+                  </dd>
+                </div>
+                <div class="rounded-md border border-white/10 bg-ink/45 p-4">
+                  <dt class="text-sm text-slate-400">Location</dt>
+                  <dd class="mt-1 font-semibold text-white">Lahore, Pakistan</dd>
+                </div>
+              </dl>
+            </address>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 px-4 py-8 text-center text-sm text-slate-400">
+    <p>&copy; 2026 Abdul Rehman. All rights reserved.</p>
+  </footer>
+
+  <script src="./script.js" defer></script>
 </body>
 </html>
